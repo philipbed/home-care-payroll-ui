@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,9 +14,83 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+} */
+
+/* CustomStyles.css */
+.fullcalendar-container {
+  max-width: 80vw;
+  width: 120%;
+  overflow: hidden;
 }
 
-body {
+html body .fullcalendar-container .fc-view-harness .fc-daygrid table tbody tr td.fc-day.fc-daygrid-day {
+  font-size: 0.8rem;
+  /* max-height: 50px !important; */
+  height: 10rem !important;
+}
+
+.fc-daygrid-day-top {
+  font-size: 0.9rem;
+}
+
+.fc-event {
+  font-size: 0.7rem;
+  margin: 2px 0;
+}
+
+.fc .fc-scrollgrid-section {
+  overflow: visible !important;
+}
+
+
+@media print {
+  body {
+    transform: scale(0.7); /* Adjust the scale to fit the calendar on one page */
+    transform-origin: top left;
+  }
+
+  .fc {
+    font-size: 0.8em; /* Adjust the font size */
+    /* width: 300vw; */
+    /* height: 300vh !important; */
+  }
+
+  .fc .fc-scrollgrid {
+    overflow: none !important;
+    width: 400px !important; /* Ensure inner sections take up the full width */
+    /* height: auto !important; */
+  }
+
+  .fc .fc-scrollgrid-section {
+    overflow: visible !important;
+    width: 400px !important; /* Ensure inner sections take up the full width */
+  }
+
+  .fc .fc-daygrid-day-frame {
+    height: auto !important;
+  }
+
+  .fc .fc-daygrid,
+  .fc .fc-daygrid-day,
+  .fc .fc-daygrid-day-top {
+    flex: none; /* Disable flex to allow content to shrink */
+  }
+
+  .fc .fc-col-header-cell {
+    padding: 4px; /* Adjust padding */
+  }
+
+  .fc .fc-daygrid-event {
+    font-size: 0.7em; /* Adjust event font size */
+    margin: 2px; /* Adjust margin */
+  }
+
+  /* ... any other styles you find necessary for print view ... */
+}
+
+
+
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +98,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */

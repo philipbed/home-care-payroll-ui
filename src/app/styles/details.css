@@ -1,0 +1,65 @@
+@media print {
+  body {
+    transform: scale(0.8); /* Adjust if necessary to fit the width */
+    transform-origin: top left;
+  }
+
+  .fc {
+    width: 100%;
+    page-break-after: avoid;
+    page-break-before: avoid;
+    page-break-inside: avoid;
+  }
+
+  .fc .fc-scrollgrid {
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important; /* Set to 100% of the page width */
+  }
+
+  .fc .fc-daygrid-day-frame,
+  .fc .fc-daygrid-day-events {
+    min-height: 0; /* Keep your previous adjustment */
+  }
+
+  .fc .fc-daygrid-day {
+    padding: 2px; /* Adjust horizontal padding here */
+  }
+
+  .fc .fc-daygrid-day-top {
+    padding: 4px; /* Adjust if necessary for spacing */
+  }
+
+  .fc .fc-daygrid-event {
+    padding: 2px; /* Adjust event padding */
+    white-space: normal; /* Wrap text */
+  }
+
+  .fc .fc-col-header-cell {
+    padding: 4px; /* Adjust header cell padding */
+  }
+
+  .fc-event {
+    margin-bottom: 2px; /* Space between events */
+  }
+
+  /* Additional styles to adjust the horizontal spacing */
+  .fc-header-toolbar {
+    margin-bottom: 10px; /* Add space below the header */
+  }
+
+  .fc .fc-day {
+    width: auto; /* Allow day cells to auto-adjust their width */
+  }
+
+
+  div > div.notes-section > hr{
+    background-color: rgb(0, 0, 0);
+  }
+
+
+}
+
+
+
+
