@@ -20,7 +20,7 @@ const getNurses = ({current, caregiverName, payPeriod}: {current: any, caregiver
   return Object.entries(current).map((entry) => mapTotalHours(entry, payPeriod)).filter(events => events !== undefined).map(dateHour => ({...dateHour!, caregiverName}))
 }
 
-export const cleanData = ({data, payPeriod}:{data: [], payPeriod: Date}) => {
+export const cleanData = ({data, payPeriod}:{data: any[], payPeriod: Date}) => {
   const cleanedData = data.reduce((accumulator: PayrollRow, current, index: number) => {
     if (index === 0){
       return accumulator;

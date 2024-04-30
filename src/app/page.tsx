@@ -9,7 +9,7 @@ import { cleanData } from '@/lib/parseUtils';
 
 export default function Home() {
   const {state, dispatch} = useCaregiverContext()
-  const [payrollFile, setFile] = useState<File | null>(null)
+  const [payrollFile, setFile] = useState<any>()
   const [payPeriod, setPayPeriod] = useState<Date>();
 
   const handlePayPeriodChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -27,10 +27,10 @@ export default function Home() {
   const submitForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (payrollFile) {
-      Papa.parse(payrollFile, {
+      Papa.parse<any>(payrollFile, {
       header: true,  // indicates the first row contains column names
       dynamicTyping: true, // indicates numeric and boolean data should be converted to their type instead of remaining as strings
-      complete: function(results: { data: [], error: [], meta: {}} ) {
+      complete: function(results, file  ) {
         const cleanedData = cleanData({data: results.data, payPeriod: payPeriod!})
         dispatch({type: 'ADD_CAREGIVERS', payload: cleanedData})
       }
